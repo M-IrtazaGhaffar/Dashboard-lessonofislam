@@ -1,0 +1,274 @@
+/* Login */
+
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 80vh;
+    flex-direction: column;
+    gap: 10;
+}
+
+.login form {
+    width: 25vw;
+    padding: 25px;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.login h1 {
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.login label {
+    font-size: 12px;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+.login input {
+    padding: 5px 10px;
+    font-size: medium;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 25px;
+}
+
+.login button {
+    background-color: #FF385C;
+    font-family: 'Poppins', sans-serif;
+    border: none;
+    color: whitesmoke;
+    padding: 5px 10px;
+    font-size: medium;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+/* Goback */
+
+.goback {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(112, 128, 144, 0.2);
+    width: fit-content;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.goback:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: 0.1s all;
+}
+
+/* Route */
+
+.route {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.route h3 {
+    font-weight: normal;
+}
+
+/* Dashboard */
+
+.dashboard .nav1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25px;
+    background-color: #FF385C;
+    color: whitesmoke;
+    position: sticky;
+    top: 0px;
+    z-index: 1000000000;
+}
+
+.dashboard .nav1 h1 {
+    font-size: 20px;
+}
+
+.dashboard .nav1 svg {
+    cursor: pointer;
+}
+
+.dashboard .nav2 {
+    background-color: rgba(128, 128, 128, 0.1);
+    padding: 10px 25px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.dashboard .nav2 a {
+    text-decoration: none;
+    color: #FF385C;
+}
+
+.outlet {
+    padding: 25px;
+    min-height: 100vh;
+}
+
+.footer {
+    background-color: #FF385C;
+    color: whitesmoke;
+    text-align: center;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    justify-content: center;
+}
+
+.footer a {
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+/* Edit */
+
+/* Settings */
+
+/* Create */
+
+.create-btn {
+    padding: 10px 25px;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    border-radius: 5px;
+    border: 1px solid rgba(128, 128, 128, 0.5);
+    cursor: pointer;
+    width: fit-content;
+    color: black;
+    text-decoration: none;
+}
+
+.create-btn:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: 0.1s all;
+}
+
+.create form {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.create form label, .create form p {
+    font-size: 13px;
+    display: block;
+}
+
+.create form textarea {
+    width: calc(100% - 25px);
+    resize: none;
+    padding: 5px 10px;
+    font-size: 15px;
+    outline: none;
+    border: 1px solid rgba(128, 128, 128, 0.5);
+}
+
+.create form .btn {
+    margin: 25px 0;
+    width: fit-content;
+    background-color: #FF385C;
+    color: whitesmoke;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    cursor: pointer;
+}
+
+/* Home */
+
+/* table */
+
+.no-table {
+    display: none;
+    text-align: center;
+    padding: 25px;
+}
+
+table {
+    padding: 25px;
+    width: 100%;
+    min-width: 500px;
+    overflow: scroll;
+    text-align: left;
+}
+
+table thead {
+    background-color: rgba(128, 128, 128, 0.2);
+}
+
+table th, table td {
+    padding: 10px;
+    border-radius: 5px;
+}
+
+table .title {
+    min-width: 500px;
+    max-width: 500px;
+}
+
+table svg:hover {
+    color: #FF385C;
+    transition: 0.1s all;
+}
+
+.actions {
+    display: flex;
+    gap: 20px;
+}
+
+.actions svg:hover {
+    scale: 1.1;
+    cursor: pointer;
+    transition: 0.1s all;
+}
+
+/* Loader */
+
+.loader {
+    margin: 50vh 50%;
+    width: 50px;
+    height: 50px;
+    border-top: 2px solid #FF385C;
+    border-radius: 100%;
+    animation: rotation 0.5s 0s infinite alternate-reverse;
+}
+
+@keyframes rotation {
+    100%{
+        rotate: 360deg;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .login form {
+        width: 80vw;
+    }
+    table {
+        display: none;
+    }
+    .no-table {
+        display: block;
+    }
+}

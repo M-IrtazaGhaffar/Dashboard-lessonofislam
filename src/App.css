@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Bacasime+Antique&family=Bricolage+Grotesque&family=Poppins&family=Raleway&family=Ruwudu&family=Space+Grotesk&display=swap');
+@import 'ckeditor-tailwind-reset/ckeditor-tailwind-reset';
+
+.ck {
+  height: 75vh;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  transition: 0.1s all;
+}
+
+.logo {
+  padding: 5px;
+  text-align: center;
+}
+
+.logo a {
+  width: 100%;
+  font-size: 25px;
+  color: #FF385C;
+  text-decoration: none;
+}
