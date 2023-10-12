@@ -11,34 +11,6 @@ function Home() {
   const dispatch = useDispatch()
   const n = useNavigate()
   const [Data, setData] = useState([])
-  const data = [
-    {
-      id: 1,
-      title: 'How Islam Spread?',
-      Date: '10-09-2023'
-    },
-    {
-      id: 2,
-      title: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos consequatur aliquam vitae perferendis accusamus explicabo fugit quis at repellendus numquam.',
-      Date: '10-09-2023'
-    },
-    {
-      id: 3,
-      title: 'How Islam Spread?',
-      Date: '10-09-2023'
-    },
-    {
-      id: 4,
-      title: 'How Islam Spread?',
-      Date: '10-09-2023'
-    },
-    {
-      id: 5,
-      title: 'How Islam Spread?',
-      Date: '10-09-2023'
-    },
-
-  ]
 
   const [ReFetch, setReFetch] = useState(0)
   const [Loading, setLoading] = useState(0)
@@ -69,8 +41,8 @@ function Home() {
   }
 
   const deleteFunc = async (id) => {
-    window.confirm('YOYO')
-    console.log(id);
+    const ans = window.confirm(`Do you want to delete blog ${id}?`)
+    alert(ans)
   }
 
   useEffect(() => {

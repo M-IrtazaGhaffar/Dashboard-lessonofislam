@@ -14,11 +14,14 @@ function Login() {
     password: ''
   })
 
+  const [Loading, setLoading] = useState(0)
+
   const handleInput = (e) => {
     setData({ ...Data, [e.target.name]: e.target.value })
   }
 
   const loginForm = async (e) => {
+    setLoading(1)
     e.preventDefault()
     try {
       const res = await axios.post('https://api-lessonofislam.ittidevelops.com/writer/login', Data)
@@ -32,6 +35,7 @@ function Login() {
       if (error.response.status === 401) alert(error.response.data.message)
       else alert('Some Error Occured')
     }
+    setLoading(0)
   }
 
   return (
@@ -42,7 +46,11 @@ function Login() {
         <input type="email" name='email' onChange={handleInput} required />
         <label htmlFor="password">Password</label>
         <input type="password" name="password" onChange={handleInput} required />
-        <button type='submit'>Login</button>
+        <button type='submit'>
+          {
+            Loading ? 'Please Wait...' : 'Login'
+          }
+        </button>
       </form>
     </div>
   )
