@@ -88,7 +88,7 @@ function CreateForm() {
                 uid: uid,
                 title: Title,
                 image: UpImg,
-                desc: Desc,
+                descr: Desc,
                 detail: editorData,
                 tid: Number(SelectedTag)
             })
