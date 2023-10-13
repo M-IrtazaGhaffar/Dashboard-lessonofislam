@@ -29,7 +29,6 @@ function Home() {
       setData([...resp])
       setLoading(0)
     } catch (error) {
-      console.log(error);
       setError(1)
       let err = error.response.status || 500
       if (err === 401) {
@@ -42,7 +41,25 @@ function Home() {
 
   const deleteFunc = async (id) => {
     const ans = window.confirm(`Do you want to delete blog ${id}?`)
-    alert(ans)
+    if (!ans) return
+    setLoading(1)
+    try {
+      const res = await axios.post('https://api-lessonofislam.ittidevelops.com/writer/deleteBlog', {
+        id: id,
+        token: token
+      })
+      alert(res.data.data)
+    } catch (error) {
+      setError(1)
+      console.log(error);
+      let err = error.response.status || 500
+      if (err === 401) {
+        alert(error.response.data.message)
+        dispatch(logout())
+      }
+      else alert('Some Error Occured')
+    }
+    fetchFunc()
   }
 
   useEffect(() => {

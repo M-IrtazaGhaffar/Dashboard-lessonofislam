@@ -196,6 +196,17 @@
     cursor: pointer;
 }
 
+.create form .length {
+    padding: 0;
+    float: right;
+    font-size: small;
+}
+
+select {
+    padding: 10px;
+    width: 50vw;
+}
+
 /* Home */
 
 
@@ -270,7 +281,7 @@ table svg:hover {
     animation: rotation 0.5s 0s infinite alternate-reverse;
 }
 
-/* Eror */
+/* Error */
 
 .error {
     color: #FF385C;
