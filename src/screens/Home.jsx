@@ -124,7 +124,7 @@ function Home() {
                           </svg>
                           <svg onClick={() => n('/dashboard/edit', {
                             state: {
-                              data: 1
+                              data: item.ID
                             }
                           })}
                             xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-pen" viewBox="0 0 16 16">

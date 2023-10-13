@@ -18,7 +18,6 @@ function CreateForm() {
     const [Tag, setTag] = useState([])
     const [SelectedTag, setSelectedTag] = useState(0)
     const [Img, setImg] = useState('')
-    const [UpImg, setUpImg] = useState('')
     const [editorData, setEditorData] = useState('');
     const [Loading, setLoading] = useState(0)
     const [Error, setError] = useState(0)
@@ -32,7 +31,6 @@ function CreateForm() {
             setTag(await res.data.data)
         } catch (error) {
             setError(1)
-            console.log(error);
             let err = error.response.status || 500
             if (err === 401) {
                 alert(error.response.data.message)
@@ -52,14 +50,7 @@ function CreateForm() {
             formData.append('file', file);
             formData.append('upload_preset', upload_preset)
             const res = await axios.post(`https://api.cloudinary.com/v1_1/${cloud}/image/upload`, formData)
-            const img = await res.data.url
-            console.log(img);
-            if (img === '') {
-                alert('Please Upload again!')
-                return false;
-            }
-            setUpImg(img);
-            return true;
+            return await res.data.url
         } catch (error) {
             setError(1)
             alert('Some Error Occured')
@@ -70,16 +61,13 @@ function CreateForm() {
     const UploadData = async (e) => {
         e.preventDefault();
 
-        if (Title === '' || Desc === '' || editorData === '' || Img === '' || SelectedTag === 0) {
-            alert('Data not complete!')
-            return;
-        }
-
         setLoading(1)
 
-        if (!(await UploadImg())) {
-            alert('false')
-            return;
+        const img = await UploadImg()
+
+        if (img == '') {
+            alert('Please Upload again!')
+            setLoading(0)
         }
 
         try {
@@ -87,7 +75,7 @@ function CreateForm() {
                 token: token,
                 uid: uid,
                 title: Title,
-                image: UpImg,
+                image: img,
                 descr: Desc,
                 detail: editorData,
                 tid: Number(SelectedTag)
@@ -97,11 +85,10 @@ function CreateForm() {
             setTitle('')
             setEditorData('')
             setSelectedTag('')
-            setUpImg('')
             n('/dashboard/')
         } catch (error) {
-            setError(1)
             console.log(error);
+            setError(1)
             let err = error.response.status || 500
             if (err === 401) {
                 alert(error.response.data.message)
@@ -116,7 +103,7 @@ function CreateForm() {
     useEffect(() => {
         fetchTags()
         return () => {
-            if (Title !== '' || Desc !== '' || UpImg !== '' || editorData !== '' || SelectedTag !== '') {
+            if (Title !== '' || Desc !== '' || editorData !== '' || SelectedTag !== '') {
                 alert('Your data will not be saved!')
             }
         }
@@ -149,7 +136,7 @@ function CreateForm() {
                                 <label htmlFor="tag" >Please Select a Tag</label>
                                 <select name="tag" id="tag" onChange={(e) => {
                                     setSelectedTag(e.target.value)
-                                }}>
+                                }} required>
                                     <option value={0}>Select here</option>
                                     {
                                         Tag.map((item, index) => {
