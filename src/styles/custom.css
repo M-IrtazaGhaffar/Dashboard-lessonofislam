@@ -142,6 +142,36 @@
 
 /* Settings */
 
+.settings p {
+    font-size: 12px;
+}
+
+.settings .data {
+    display: flex;
+    justify-content: center;
+    gap: 3px;
+    flex-direction: column;
+}
+
+.settings .data label {
+    font-size: 12px;
+}
+
+.settings .data input {
+    padding: 10px;
+}
+
+.settings button {
+    background-color: #FF385C;
+    font-family: 'Poppins', sans-serif;
+    border: none;
+    color: whitesmoke;
+    padding: 5px 10px;
+    font-size: medium;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
 /* Create */
 
 .create-btn {
