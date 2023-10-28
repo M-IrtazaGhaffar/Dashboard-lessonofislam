@@ -321,6 +321,59 @@ table svg:hover {
     padding: 100px 0;
 }
 
+/* Change Password */
+
+.changepassword {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    min-height: 90vh;
+}
+
+.changepassword h1 {
+    text-align: center;
+}
+
+.changepassword svg {
+    align-self: center;
+}
+
+.changepassword p {
+    color: #FF385C;
+    text-align: center;
+    font-size: small;
+}
+
+.changepassword form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 50px 25px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 5px;
+}
+
+.changepassword form label {
+    font-size: smaller;
+}
+
+.changepassword form input {
+    width: 250px;
+    padding: 5px 10px;
+}
+
+.changepassword form button {
+    margin: 10px 0;
+    background-color: #FF385C;
+    border: none;
+    padding: 5px;
+    color: whitesmoke;
+    font-size: large;
+    cursor: pointer;
+}
+
 @keyframes rotation {
     100%{
         rotate: 360deg;
