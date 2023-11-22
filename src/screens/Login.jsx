@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import axios from "axios";
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { login } from "../reducers/Reducers";
 
@@ -46,6 +46,7 @@ function Login() {
         <input type="email" name='email' onChange={handleInput} required />
         <label htmlFor="password">Password</label>
         <input type="password" name="password" onChange={handleInput} required />
+        <Link className='forgotpass' to='/forgotpassword'>Forgot Password</Link>
         <button type='submit'>
           {
             Loading ? 'Please Wait...' : 'Login'

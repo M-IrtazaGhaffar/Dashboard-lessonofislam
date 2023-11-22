@@ -9,6 +9,7 @@ import Home from "./screens/Home";
 import Dashboard from "./screens/Dashboard";
 import Create from "./screens/Create";
 import ChangePassword from "./screens/ChangePassword";
+import Forgotpassword from "./screens/Forgotpassword";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         </h1>
         <Routes>
           <Route path="/*" element={<Login />} />
+          <Route path="/forgotpassword" element={<Forgotpassword />} />
           <Route exact path="/changepassword/:token" element={<ChangePassword />} />
           <Route
             exact

@@ -38,7 +38,7 @@
     font-size: medium;
     outline: none;
     font-family: 'Poppins', sans-serif;
-    margin-bottom: 25px;
+    margin-bottom: 10px;
 }
 
 .login button {
@@ -50,6 +50,16 @@
     font-size: medium;
     cursor: pointer;
     border-radius: 2px;
+}
+
+.login .forgotpass {
+    background: none;
+    color: black;
+    text-align: left;
+    padding: 0;
+    font-size: 12px;
+    padding: 0 0 10px 0;
+    text-decoration: underline;
 }
 
 /* Goback */
